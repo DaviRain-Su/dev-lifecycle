@@ -112,18 +112,44 @@ Templates: https://github.com/YOUR_ORG/dev-lifecycle/tree/main/templates
 
 ---
 
-## 适配不同 Code Agent
+## 适配 Code Agent
 
-在你的项目中添加对应的入口文件，指向本方法论：
+### 一键安装（推荐）
 
-| Agent | 入口文件 | 示例内容 |
-|-------|---------|---------|
-| **通用 / Codex** | `AGENTS.md` | `Read: docs/methodology/README.md` |
-| **Claude Code** | `CLAUDE.md` | `Read: docs/methodology/README.md` |
-| **Cursor** | `.cursor/rules` | `Read: docs/methodology/README.md` |
-| **pi** | `.pi/skills/dev-lifecycle/SKILL.md` | `Read: docs/methodology/README.md` |
+```bash
+# 1. 在你的项目中添加 submodule
+git submodule add <this-repo-url> docs/methodology
 
-所有入口指向同一份内容。**一处更新，处处生效。**
+# 2. 运行安装脚本，自动生成所有 Agent 入口文件
+bash docs/methodology/install.sh
+```
+
+### 支持的 Agent
+
+`install.sh` 会自动生成以下所有入口文件：
+
+| Agent | 入口文件 | 备注 |
+|-------|---------|------|
+| **Codex / OpenCode / Amp** | `AGENTS.md` | OpenAI 标准 |
+| **Claude Code** | `CLAUDE.md` | Anthropic |
+| **Gemini CLI / Droid** | `GEMINI.md` | Google |
+| **Cursor** | `.cursor/rules` | Cursor |
+| **Cline** | `.clinerules` | VS Code 插件 |
+| **Windsurf** | `.windsurfrules` | Codeium |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | GitHub |
+| **Aider** | `CONVENTIONS.md` | 通用约定 |
+| **pi** | `~/.pi/agent/skills/dev-lifecycle/` | 用户级 skill，`/skill:dev-lifecycle` |
+
+所有入口指向同一份 `docs/methodology/README.md`。**一处更新，处处生效。**
+
+### pi 全局 Skill安装
+
+pi 用户可以安装全局 skill，任何项目都能用 `/skill:dev-lifecycle`：
+
+```bash
+mkdir -p ~/.pi/agent/skills/dev-lifecycle
+cp skill/SKILL.md ~/.pi/agent/skills/dev-lifecycle/
+```
 
 ---
 
