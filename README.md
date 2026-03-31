@@ -3,6 +3,10 @@
 > **7 个阶段，从需求到部署。不可跳过。**
 > **适用于任何 Code Agent（pi、Claude Code、Codex、Cursor）和人类开发者。**
 
+> 💡 **核心理念**: [复利工程](PRINCIPLES.md) — 小改进的累积效应，让每次开发都产生长期价值。
+> 
+> **AI 压缩比**: 样板代码 **100x** | 测试编写 **50x** | 功能实现 **30x** | Bug 修复 **20x**
+
 ---
 
 ## 为什么需要这个
@@ -42,13 +46,32 @@ Phase 7: Review & Deploy（审查）   → 确认质量，部署上线
 
 ## 快速开始
 
-### 方法 1：直接复制模板
+### 1. 确定从哪个阶段开始
+
+```
+有想法但不确定是否该做？  →  从 Phase 0 开始（商业验证）
+已有明确需求，准备开发？   →  从 Phase 1 开始（PRD）
+已在开发中，需要加速？     →  直接使用 Phase 4-7
+```
+
+### 2. 阅读核心原则（5 分钟）
+
+阅读 [PRINCIPLES.md](PRINCIPLES.md)：
+- **Boil the Lake** — 完整实现的成本接近于零
+- **Search Before Building** — 三层知识体系
+- **Processize before Productize** — 先流程化，后产品化
+
+### 3. 复制模板
 
 ```bash
 # 在你的项目中创建 docs/ 目录
 mkdir -p your-project/docs
 
-# 复制需要的模板
+# 复制核心原则
+cp PRINCIPLES.md your-project/docs/PRINCIPLES.md
+
+# 从合适的阶段开始
+cp templates/00-business-validation.md your-project/docs/00-business-validation.md  # 如有需要
 cp templates/01-prd.md your-project/docs/01-prd.md
 # 按顺序填写...
 ```
@@ -81,15 +104,63 @@ Templates: https://github.com/YOUR_ORG/dev-lifecycle/tree/main/templates
 
 ## 模板清单
 
+### 前置阶段（可选）
+
+| Phase | 模板 | 说明 | 何时使用 |
+|-------|------|------|---------|
+| 0 | [templates/00-business-validation.md](templates/00-business-validation.md) | 商业验证：找到社区、验证想法、流程化 | 有想法但不确认是否该做 |
+
+### 核心阶段（必须顺序执行）
+
 | Phase | 模板 | 说明 |
 |-------|------|------|
-| 1 | [templates/01-prd.md](templates/01-prd.md) | 需求定义：问题、用户故事、范围、成功标准 |
-| 2 | [templates/02-architecture.md](templates/02-architecture.md) | 架构设计：组件、数据流、依赖、状态管理 |
+| 1 | [templates/01-prd.md](templates/01-prd.md) | 需求定义：问题、用户故事、代码库探索、成功标准 |
+| 2 | [templates/02-architecture.md](templates/02-architecture.md) | 架构设计：组件、数据流、10维度产品评分、工程锁定项 |
 | 3 | [templates/03-technical-spec.md](templates/03-technical-spec.md) | **技术规格：数据结构(字节级)、接口、错误码、状态机** |
-| 4 | [templates/04-task-breakdown.md](templates/04-task-breakdown.md) | 任务拆解：≤4h 任务列表、依赖图、里程碑 |
-| 5 | [templates/05-test-spec.md](templates/05-test-spec.md) | 测试规格：Happy/Boundary/Error 用例、TDD 骨架 |
-| 6 | [templates/06-implementation.md](templates/06-implementation.md) | 实现检查清单：编码前/中/后检查、偏差记录 |
-| 7 | [templates/07-review-deploy.md](templates/07-review-deploy.md) | 审查部署：安全审查、部署清单、版本记录 |
+| 4 | [templates/04-task-breakdown.md](templates/04-task-breakdown.md) | 任务拆解：串行/并行任务、Coordinator 模式、里程碑 |
+| 5 | [templates/05-test-spec.md](templates/05-test-spec.md) | 测试规格：Happy/Boundary/Error、浏览器测试、TDD 骨架 |
+| 6 | [templates/06-implementation.md](templates/06-implementation.md) | 实现检查：Simplify优化、上下文压缩、破坏性检查、偏差记录 |
+| 7 | [templates/07-review-deploy.md](templates/07-review-deploy.md) | 审查部署：多Specialist审查、对抗性验证、知识沉淀、部署清单 |
+
+### 附录
+
+| 文档 | 说明 |
+|------|------|
+| [APPENDIX-knowledge-management.md](templates/APPENDIX-knowledge-management.md) | 知识管理：会话标记、搜索、压缩、恢复、技能创建 |
+
+---
+
+## 借鉴与致谢
+
+本方法论整合了以下优秀项目的最佳实践：
+
+### [Sahil Lavingia](https://github.com/slavingia/skills) (Gumroad 创始人)
+
+> The Minimalist Entrepreneur — 极简主义创业
+
+**借鉴内容**:
+- ✅ **Phase 0** → 商业验证（Find Community → Validate → Processize）
+- ✅ **Processize before Productize** → PRINCIPLES.md 核心原则
+- ✅ **手动优先** → 先流程化，后产品化
+
+### [claude-code-system-prompts](https://github.com/Leonxlnx/claude-code-system-prompts)
+
+> Claude Code 内部架构的逆向工程分析
+
+**借鉴内容**:
+- ✅ **Verification Agent** → Phase 7 对抗性验证
+- ✅ **Simplify Skill** → Phase 6 代码优化
+- ✅ **Coordinator** → Phase 4 并行任务编排
+- ✅ **Session Search/Compact** → 附录 知识管理
+
+### [gstack](https://github.com/garrytan/gstack)
+
+> AI 辅助工程方法论（轻量借鉴）
+
+**借鉴内容**:
+- ✅ **CEO Review 10 维度** → Phase 2 产品评分
+- ✅ **Review Army** → Phase 7 多 Specialist 审查
+- ✅ **Boil the Lake** → PRINCIPLES.md 完成度原则
 
 ---
 
@@ -157,13 +228,26 @@ cp skill/SKILL.md ~/.pi/agent/skills/dev-lifecycle/
 
 ```
 your-project/docs/
-├── 01-prd.md                 ← Phase 1
-├── 02-architecture.md        ← Phase 2
-├── 03-technical-spec.md      ← Phase 3（最重要）
-├── 04-task-breakdown.md      ← Phase 4
-├── 05-test-spec.md           ← Phase 5
-├── 06-implementation-log.md  ← Phase 6
-└── 07-review-report.md       ← Phase 7
+├── PRINCIPLES.md                   ← 核心原则：复利工程、Boil the Lake、三层知识体系
+├── 00-business-validation.md       ← Phase 0（可选，商业验证）
+├── 01-prd.md                       ← Phase 1
+├── 02-architecture.md              ← Phase 2
+├── 03-technical-spec.md            ← Phase 3（最重要）
+├── 04-task-breakdown.md            ← Phase 4
+├── 05-test-spec.md                 ← Phase 5
+├── 06-implementation-log.md        ← Phase 6
+├── 07-review-report.md             ← Phase 7
+└── APPENDIX-knowledge-management.md ← 知识管理附录
+```
+
+可选的其他附录：
+```
+├── APPENDIX-session-summaries/     ← 会话摘要存档
+│   ├── summary-2024-01-15.md
+│   └── summary-2024-01-20.md
+└── APPENDIX-skills/                ← 项目级技能
+    ├── skill-database-migration.md
+    └── skill-security-audit.md
 ```
 
 ---
