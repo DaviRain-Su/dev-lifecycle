@@ -162,6 +162,18 @@ Templates: https://github.com/YOUR_ORG/dev-lifecycle/tree/main/templates
 - ✅ **Review Army** → Phase 7 多 Specialist 审查
 - ✅ **Boil the Lake** → PRINCIPLES.md 完成度原则
 
+### [Armin Ronacher — The Friction Is Your Judgment](https://mitsuhiko.github.io/talks/ai-engineer-talk)
+
+> AI Engineer 2026 伦敦演讲，Flask 创建者，12+ 月 agent 开发实战经验
+
+**借鉴内容**:
+- ✅ **速度陷阱 & 心理学问题** → PRINCIPLES.md 第 7 节
+- ✅ **代理熵与正反馈循环** → PRINCIPLES.md + Phase 6 熵检查
+- ✅ **Agent-Legible 代码库设计** → Phase 2 代理可读性设计
+- ✅ **机械强制规则 (Agent Guardrails)** → Phase 2 lint 规则框架
+- ✅ **审查责任 Agent/Human 分工** → Phase 7 审查分工
+- ✅ **高/低杠杆场景** → PRINCIPLES.md 速度使用指南
+
 ---
 
 ## 5 条强制规则
