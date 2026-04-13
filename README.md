@@ -127,6 +127,7 @@ Templates: https://github.com/YOUR_ORG/dev-lifecycle/tree/main/templates
 | 文档 | 说明 |
 |------|------|
 | [APPENDIX-knowledge-management.md](templates/APPENDIX-knowledge-management.md) | 知识管理：会话标记、搜索、压缩、恢复、技能创建 |
+| [APPENDIX-friction-checklist.md](templates/APPENDIX-friction-checklist.md) | 摩擦检查清单：心理学自检、代码库健康度、机械强制规则、审查分工矩阵 |
 
 ---
 
