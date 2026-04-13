@@ -1,9 +1,9 @@
 ---
 name: dev-lifecycle
 description: >
-  Structured 7-phase development lifecycle for AI-assisted coding.
+  Structured 8-phase development lifecycle for AI-assisted coding.
   Use when starting a new project, module, or feature that involves writing code.
-  Enforces: PRD → Architecture → Technical Spec → Task Breakdown → Test Spec → Implementation → Review.
+  Enforces: PRD → Architecture → Technical Spec → Task Breakdown → Test Spec → Implementation → Review → Evolution.
   Invoke with /skill:dev-lifecycle to start.
 ---
 
@@ -11,16 +11,17 @@ description: >
 
 ## 概述
 
-7 个阶段，从需求到部署。不可跳过任何阶段。
+8 个阶段，从需求到长期治理。不可跳过任何阶段。
 
 ```
-Phase 1: PRD（需求定义）          → 做什么 / 不做什么
+Phase 1: PRD（需求定义）          → 对齐锚点 + 做什么 / 不做什么
 Phase 2: Architecture（架构设计） → 怎么组织 + 代理可读性设计 + 机械强制规则
-Phase 3: Technical Spec（技术规格）→ 每个字节怎么做（最关键）
+Phase 3: Technical Spec（技术规格）→ 增量生成 + 每个字节怎么做（最关键）
 Phase 4: Task Breakdown（任务拆解）→ ≤4h 的可执行任务（区分探索型/承诺型）
 Phase 5: Test Spec（测试规格）     → TDD：先定义什么是对的
 Phase 6: Implementation（实现）    → 代理熵检查 + 写代码让测试通过
 Phase 7: Review & Deploy（审查）   → Agent/Human 审查分工 + 确认质量，部署上线
+Phase 8: Evolution（演化治理）     → 决策日志 + ADR + 复杂度预算 + 交接地图
 ```
 
 ## 使用方法

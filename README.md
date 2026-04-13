@@ -1,6 +1,6 @@
 # Dev Lifecycle — AI 时代的结构化开发方法论
 
-> **7 个阶段，从需求到部署。不可跳过。**
+> **8 个阶段，从需求到长期治理。不可跳过。**
 > **适用于任何 Code Agent（pi、Claude Code、Codex、Cursor）和人类开发者。**
 
 > 💡 **核心理念**: [复利工程](PRINCIPLES.md) — 小改进的累积效应，让每次开发都产生长期价值。
@@ -30,7 +30,7 @@ AI 写代码很快。但如果规格模糊，AI 会按自己的理解写——�
 
 ---
 
-## 7 个阶段
+## 8 个阶段
 
 ```
 Phase 1: PRD（需求定义）          → 定义「做什么」和「不做什么」
@@ -40,6 +40,7 @@ Phase 4: Task Breakdown（任务拆解）→ 拆成 ≤4h 的可执行任务
 Phase 5: Test Spec（测试规格）     → TDD：先定义「什么是对的」
 Phase 6: Implementation（实现）    → 写代码，让测试通过
 Phase 7: Review & Deploy（审查）   → 确认质量，部署上线
+Phase 8: Evolution（演化治理）     → 决策日志、ADR、复杂度预算、交接地图
 ```
 
 每个阶段有**明确的输入、输出和验收标准**。当前阶段验收通过后，才能进入下一阶段。
@@ -123,6 +124,7 @@ Templates: https://github.com/YOUR_ORG/dev-lifecycle/tree/main/templates
 | 5 | [templates/05-test-spec.md](templates/05-test-spec.md) | 测试规格：Happy/Boundary/Error、浏览器测试、TDD 骨架 |
 | 6 | [templates/06-implementation.md](templates/06-implementation.md) | 实现检查：Simplify优化、上下文压缩、破坏性检查、偏差记录 |
 | 7 | [templates/07-review-deploy.md](templates/07-review-deploy.md) | 审查部署：多Specialist审查、对抗性验证、知识沉淀、部署清单 |
+| 8 | [templates/08-evolution-governance.md](templates/08-evolution-governance.md) | 演化治理：决策日志、ADR、复杂度预算、交接地图、运行态对齐 |
 
 ### 附录
 
@@ -256,6 +258,12 @@ your-project/docs/
 ├── 05-test-spec.md                 ← Phase 5
 ├── 06-implementation-log.md        ← Phase 6
 ├── 07-review-report.md             ← Phase 7
+├── 08-evolution-governance.md      ← Phase 8（演化治理）
+├── DECISIONS.md                    ← 决策日志（Phase 8）
+├── ONBOARDING.md                   ← 交接地图（Phase 8）
+├── ADR/                            ← 架构决策记录（Phase 8）
+│   ├── _template.md
+│   └── ADR-001-xxx.md
 └── APPENDIX-knowledge-management.md ← 知识管理附录
 ```
 
