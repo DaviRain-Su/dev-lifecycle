@@ -26,6 +26,8 @@ AI 写代码很快。但如果规格模糊，AI 会按自己的理解写——�
 
 **规格越精确，AI 输出越准确。** 这套方法论的核心就是：在写代码之前，把该定义的全定义清楚。
 
+> 🧭 **Human in the Loop**：AI 可以开得很快，但只有你知道目的地在哪。如果在实现过程中不及时对齐，AI 产出的"幻觉一致性"会让方向悄悄偏离。参见 [APPENDIX-human-in-the-loop.md](templates/APPENDIX-human-in-the-loop.md)。
+
 ---
 
 ## 7 个阶段
@@ -128,6 +130,7 @@ Templates: https://github.com/YOUR_ORG/dev-lifecycle/tree/main/templates
 |------|------|
 | [APPENDIX-knowledge-management.md](templates/APPENDIX-knowledge-management.md) | 知识管理：会话标记、搜索、压缩、恢复、技能创建 |
 | [APPENDIX-friction-checklist.md](templates/APPENDIX-friction-checklist.md) | 摩擦检查清单：心理学自检、代码库健康度、机械强制规则、审查分工矩阵 |
+| [APPENDIX-human-in-the-loop.md](templates/APPENDIX-human-in-the-loop.md) | Human in the Loop：对齐锚点、30秒复述法、偏差记录本、增量生成、转换点决策 |
 
 ---
 
