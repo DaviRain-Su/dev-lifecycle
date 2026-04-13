@@ -177,7 +177,7 @@ Templates: https://github.com/YOUR_ORG/dev-lifecycle/tree/main/templates
 
 ---
 
-## 5 条强制规则
+## 6 条强制规则
 
 ### 1. 不可跳过阶段
 即使某个阶段看似"显而易见"，也必须产出对应文档。
@@ -193,6 +193,9 @@ Templates: https://github.com/YOUR_ORG/dev-lifecycle/tree/main/templates
 
 ### 5. 模板必填项不可省略
 模板中「必填」部分不可省略。「可选」部分根据项目规模决定。
+
+### 6. 摩擦即判断力
+代理审查通过 ≠ 人类可以跳过审查。高风险变更（数据库迁移、新依赖、认证/权限、破坏性 API、不可逆操作）**必须人类判断**。速度不是目标，掌控方向才是。
 
 ---
 

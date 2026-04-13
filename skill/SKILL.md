@@ -15,12 +15,12 @@ description: >
 
 ```
 Phase 1: PRD（需求定义）          → 做什么 / 不做什么
-Phase 2: Architecture（架构设计） → 怎么组织
+Phase 2: Architecture（架构设计） → 怎么组织 + 代理可读性设计 + 机械强制规则
 Phase 3: Technical Spec（技术规格）→ 每个字节怎么做（最关键）
-Phase 4: Task Breakdown（任务拆解）→ ≤4h 的可执行任务
+Phase 4: Task Breakdown（任务拆解）→ ≤4h 的可执行任务（区分探索型/承诺型）
 Phase 5: Test Spec（测试规格）     → TDD：先定义什么是对的
-Phase 6: Implementation（实现）    → 写代码让测试通过
-Phase 7: Review & Deploy（审查）   → 确认质量，部署上线
+Phase 6: Implementation（实现）    → 代理熵检查 + 写代码让测试通过
+Phase 7: Review & Deploy（审查）   → Agent/Human 审查分工 + 确认质量，部署上线
 ```
 
 ## 使用方法
@@ -85,13 +85,26 @@ Phase 7: Review & Deploy（审查）   → 确认质量，部署上线
 
 测试代码骨架先于实现代码编写。
 
-## 5 条强制规则
+## 6 条强制规则
 
 1. **不可跳过阶段**
 2. **技术规格是代码的契约** — 代码必须与规格 100% 一致，不一致时先改规格
 3. **TDD 不可商量** — 测试先于实现
 4. **输入完整才能开始** — 上一阶段输出是下一阶段输入
 5. **必填项不可省略**
+6. **摩擦即判断力** — 代理审查通过 ≠ 人类可跳过；高风险变更（DB/auth/API/不可逆操作）必须人类判断
+
+## 关键概念：探索型 vs 承诺型任务
+
+Phase 4 任务拆解时，每个任务必须标注性质：
+- **探索型 (Explore)**: 验证方向，可跳过 Phase 3/5，代码不合入 main，分支用 `explore/` 或 `prototype/`
+- **承诺型 (Commit)**: 生产代码，必须走完整 7 阶段
+- 探索成果要进生产 → 必须从 Phase 3 重新走承诺型流程
+
+## 代理熵管理
+
+实现前检查代码库健康度（Phase 6.0.1），每完成 3 个任务暂停监控代理漂移。
+如果发现 bare catch、默认值 fallback、重复函数等代理漂移模式 ≥ 2 项，立即停止实现，先清理。
 
 ## 文档命名
 
