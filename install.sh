@@ -27,17 +27,17 @@ cat > AGENTS.md << 'AGENTSEOF'
 
 ## Mandatory Development Lifecycle
 
-This project enforces a strict **7-phase development lifecycle**.
+This project enforces a strict **8-phase development lifecycle**.
 No phase may be skipped. No code without a Technical Spec.
 
 **Full specification:** [docs/methodology/README.md](docs/methodology/README.md)
 **Templates:** `docs/methodology/templates/`
 
-### The 7 Phases
+### The 8 Phases
 
 ```
 1. PRD → 2. Architecture → 3. Technical Spec → 4. Task Breakdown
-→ 5. Test Spec → 6. Implementation → 7. Review & Deploy
+→ 5. Test Spec → 6. Implementation → 7. Review & Deploy → 8. Evolution
 ```
 
 ### Key Rules
@@ -45,7 +45,7 @@ No phase may be skipped. No code without a Technical Spec.
 1. No code without a Technical Spec (Phase 3). Create it first.
 2. No implementation without tests (Phase 5). Write test skeletons before code.
 3. Code must match the Technical Spec exactly. Spec wrong? Fix spec first.
-4. All phase docs go in `<project>/docs/01-prd.md` through `07-review-report.md`.
+4. All phase docs go in `<project>/docs/01-prd.md` through `08-evolution.md`.
 AGENTSEOF
 echo "  ✅ AGENTS.md"
 
@@ -55,7 +55,7 @@ cat > CLAUDE.md << 'CLAUDEEOF'
 
 ## ⚠️ Mandatory: Read Before Any Work
 
-This project enforces a strict 7-phase development lifecycle.
+This project enforces a strict 8-phase development lifecycle.
 **You MUST follow it. No exceptions.**
 
 → Read: [docs/methodology/README.md](docs/methodology/README.md)
@@ -70,9 +70,9 @@ If someone asks you to write code and there is no Technical Spec (Phase 3):
 4. Create the Test Spec (Phase 5).
 5. Only THEN write implementation code.
 
-### 7 Phases
+### 8 Phases
 
-PRD → Architecture → Technical Spec → Task Breakdown → Test Spec → Implementation → Review & Deploy
+PRD → Architecture → Technical Spec → Task Breakdown → Test Spec → Implementation → Review & Deploy → Evolution
 CLAUDEEOF
 echo "  ✅ CLAUDE.md"
 
@@ -80,10 +80,10 @@ echo "  ✅ CLAUDE.md"
 cat > GEMINI.md << 'GEMINIEOF'
 # Gemini Instructions
 
-This project enforces a strict 7-phase development lifecycle.
+This project enforces a strict 8-phase development lifecycle.
 Read: docs/methodology/README.md
 
-Phases: PRD → Architecture → Technical Spec → Task Breakdown → Test Spec → Implementation → Review & Deploy
+Phases: PRD → Architecture → Technical Spec → Task Breakdown → Test Spec → Implementation → Review & Deploy → Evolution
 
 Rules:
 - No code without a Technical Spec (Phase 3). Create it first.
@@ -99,10 +99,10 @@ cat > CONVENTIONS.md << 'CONVEOF'
 
 ## Development Lifecycle
 
-This project uses a mandatory 7-phase development lifecycle.
+This project uses a mandatory 8-phase development lifecycle.
 Full specification: docs/methodology/README.md
 
-Phases: PRD → Architecture → Technical Spec → Task Breakdown → Test Spec → Implementation → Review & Deploy
+Phases: PRD → Architecture → Technical Spec → Task Breakdown → Test Spec → Implementation → Review & Deploy → Evolution
 
 Rules:
 - No code without a Technical Spec (Phase 3)

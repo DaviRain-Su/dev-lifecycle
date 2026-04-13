@@ -50,8 +50,8 @@ Phase 8: Evolution（演化治理）     → 决策日志 + ADR + 复杂度预�
 
 本方法论适用于**所有粒度级别**：
 
-- **项目级**：整个项目完整经历 7 个阶段
-- **模块级**：每个子模块（如 agent-arena、chain-hub、indexer、SDK 等）**独立**经历各自的 7 个阶段
+- **项目级**：整个项目完整经历 8 个阶段
+- **模块级**：每个子模块（如 agent-arena、chain-hub、indexer、SDK 等）**独立**经历各自的 8 个阶段
 - **Phase 1/2 可引用**：子模块可以引用项目级的 PRD/架构文档，无需重写
 - **Phase 3 必须重写**：每个子模块的**技术规格必须独立编写**，这是不可妥协的硬性要求
 
@@ -99,7 +99,7 @@ Phase 8: Evolution（演化治理）     → 决策日志 + ADR + 复杂度预�
 
 Phase 4 任务拆解时，每个任务必须标注性质：
 - **探索型 (Explore)**: 验证方向，可跳过 Phase 3/5，代码不合入 main，分支用 `explore/` 或 `prototype/`
-- **承诺型 (Commit)**: 生产代码，必须走完整 7 阶段
+- **承诺型 (Commit)**: 生产代码，必须走完整 8 阶段
 - 探索成果要进生产 → 必须从 Phase 3 重新走承诺型流程
 
 ## 代理熵管理
@@ -117,12 +117,13 @@ Phase 4 任务拆解时，每个任务必须标注性质：
 ├── 04-task-breakdown.md
 ├── 05-test-spec.md
 ├── 06-implementation-log.md
-└── 07-review-report.md
+├── 07-review-report.md
+└── 08-evolution.md
 ```
 
 ## 完整模板
 
 完整模板在 dev-lifecycle 仓库：https://codeberg.org/davirain/dev-lifecycle
 
-如果项目有 submodule，路径为 `docs/methodology/templates/01-07.md`。
+如果项目有 submodule，路径为 `docs/methodology/templates/01-08.md`。
 需要时用 `read` 工具读取对应模板文件。
